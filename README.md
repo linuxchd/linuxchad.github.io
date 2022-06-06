@@ -73,6 +73,7 @@ If you're not connected, follow one of these steps:
    # ip link set $interface up
    ```
 3. Connect to wifi SSID
+  
    run `device list` to list all network interface and run the follwing commands:
    ```sh
    # station $interface scan
