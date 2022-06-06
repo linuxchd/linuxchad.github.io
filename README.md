@@ -27,7 +27,7 @@ We'll install Arch on UEFI mode, so you should enable the UEFI mode and disable 
 ## Pre installation
 I'm presuming that you're already in the Arch Linux zsh shell prompt.
 
-### Check boot mode
+### 1. Check boot mode
 To check if the UEFI mode is enabled, run:
 
 ```sh
@@ -36,13 +36,13 @@ To check if the UEFI mode is enabled, run:
 
 If the directory does not exists, the system may be booted in BIOS.
 
-### Update System Clock
+### 2. Update System Clock
 Ensures that the system clock is accurate.
 ```sh
 # timedatectl set-ntp true
 ```
 
-### Internet Connection
+### 3. Internet Connection
 First, test if you alredy have internet connection, so run:
 ```sh
 # ping google.com
@@ -74,7 +74,7 @@ If you're not connected, follow one of these steps:
    ```
 3. Connect to wifi SSID
   
-   run `device list` to list all network interface and run the follwing commands:
+   run `device list` to list all network interface and run the following commands:
    ```sh
    # station $interface scan
    # station $interface get-networks
