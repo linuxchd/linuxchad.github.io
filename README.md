@@ -6,9 +6,9 @@ This guide will show step-by-step how to Install Arch Linux on UEFI mode like a 
 
 ## Bootable Flash Drive
 First of all, you need the Arch Linux image, that can be downloaded from the [Official Website](https://www.archlinux.org/download/).
-After that, you should create the bootable flash drive with the Arch Linux image.
+After that, you should create the bootable flash drive.
 
-If you're on a GNU/linux distribution, you can use the `dd` command for it. Like:
+If you're on a GNU/linux distribution, you can use the `dd` command for it.
 ```sh
 $ dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx status=progress oflag=sync && sync
 ```
@@ -20,7 +20,7 @@ Otherwise, if you're on Windows, you can follow this [tutorial](https://wiki.arc
 
 ## BIOS
 We'll install Arch on UEFI mode, so you should enable the UEFI mode and disable the secure boot option on your BIOS system.
-(Also remember to change the boot order to boot through your USB device).
+> Also remember to change the boot order to boot through your USB device.
 
 ---
 
@@ -34,7 +34,7 @@ To check if the UEFI mode is enabled, run:
 # ls /sys/firmware/efi/efivars
 ```
 
-If the directory does not exists, the system may be booted in BIOS (not UEFI).
+If the directory does not exists, the system may be booted in BIOS.
 
 ### Update System Clock
 Ensures that the system clock is accurate.
@@ -47,42 +47,39 @@ First, test if you alredy have internet connection, so run:
 ```sh
 # ping google.com
 ```
-
 If you're not connected, follow one of these steps:
 
-
-#### Check Wifi Card Interface
-Run the following command:
-```sh
-# ip add
-```
-
 #### Connect to Wifi with iwd
-```sh
-# iwctl
-```
-
-if $interface is off, then `quit` iwd and run:
-```sh
-# rfkill unblock all
-# ip link set $interface up
-```
-once $interface is up, run `iwctl` and the following commands:
-```sh
-device list
-station $interface scan
-station $interface get-networks
-station $interface connect SSID
-```
-
-ping google.com
-
-#### Wi-Fi
-Run the following command and connect to your wi-fi network.
-```
-# wifi-menu -o
-```
-> The `-o` option is to hide your password by using the "obscure" method
+1. Check network interface name
+   ```sh
+   # ip link
+   ```
+   The response will be something like:
+   ```
+    1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT
+        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    2: enp2s0f0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT qlen 1000
+        link/ether 00:11:25:31:69:20 brd ff:ff:ff:ff:ff:ff
+    3: wlp3s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DORMANT qlen 1000
+        link/ether 01:02:03:04:05:06 brd ff:ff:ff:ff:ff:ff
+    ```
+2. Run iwd
+   ```sh
+   # iwctl
+   ```
+   if $interface is off, then `quit` iwd and run:
+   ```sh
+   # rfkill unblock all
+   # ip link set $interface up
+   ```
+3. Connect to wifi SSID
+   run `device list` to list all network interface and run the follwing commands:
+   ```sh
+   # station $interface scan
+   # station $interface get-networks
+   # station $interface connect SSID
+   ```
+---
 
 #### Wired Connection
 **Warning:** Make sure the DHCP is deactivated by running `systemctl stop dhcpcd.service`
