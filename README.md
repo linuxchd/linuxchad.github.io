@@ -42,8 +42,8 @@ Ensures that the system clock is accurate.
 # timedatectl set-ntp true
 ```
 
-### 3. Internet Connection
-First, test if you alredy have internet connection, so run:
+### 3. Wireless Network
+First, test if you alredy have wifi connection, so run:
 ```sh
 # ping google.com
 ```
