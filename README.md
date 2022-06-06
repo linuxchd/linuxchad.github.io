@@ -57,17 +57,25 @@ Run the following command:
 # ip add
 ```
 
-##### Wifi with iwd
+#### Connect to Wifi with iwd
 ```sh
 # iwctl
 ```
 
-if $interface is off, then 'quit' iwd and run:
+if $interface is off, then `quit` iwd and run:
 ```sh
 # rfkill unblock all
 # ip link set $interface up
 ```
+once $interface is up, run `iwctl` and the following commands:
+```sh
+device list
+station $interface scan
+station $interface get-networks
+station $interface connect SSID
+```
 
+ping google.com
 
 #### Wi-Fi
 Run the following command and connect to your wi-fi network.
