@@ -22,10 +22,6 @@ Otherwise, if you're on Windows, you can follow this [tutorial](https://wiki.arc
 We'll install Arch on UEFI mode, so you should enable the UEFI mode and disable the secure boot option on your BIOS system.
 (Also remember to change the boot order to boot through your USB device).
 
-## (Dual Boot) Disable Fast Startup in Windows 
-
-https://help.uaudio.com/hc/en-us/articles/213195423-How-To-Disable-Fast-Startup-in-Windows-10
-
 ---
 
 ## Pre installation
