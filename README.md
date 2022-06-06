@@ -42,7 +42,7 @@ Ensures that the system clock is accurate.
 # timedatectl set-ntp true
 ```
 
-### 3. Wireless Network
+### 3. Connect to a Wifi Network
 First, test if you alredy have wifi connection, so run:
 ```sh
 # ping google.com
@@ -80,6 +80,7 @@ If you're not connected, follow one of these steps:
    # station $interface get-networks
    # station $interface connect SSID
    ```
+   enter your wifi password
 ---
 
 #### Wired Connection
