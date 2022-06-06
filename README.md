@@ -81,6 +81,7 @@ If you're not connected, follow one of these steps:
    # station $interface connect SSID
    ```
    enter your wifi password
+
 ---
 
 #### Wired Connection
