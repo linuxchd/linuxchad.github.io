@@ -50,11 +50,24 @@ First, test if you alredy have internet connection, so run:
 
 If you're not connected, follow one of these steps:
 
-#### DHCP
-This option is automatically started. Run:
+
+#### Check Wifi Card Interface
+Run the following command:
 ```sh
-# dhcpcd
+# ip add
 ```
+
+##### Wifi with iwd
+```sh
+# iwctl
+```
+
+if $interface is off, then 'quit' iwd and run:
+```sh
+# rfkill unblock all
+# ip link set $interface up
+```
+
 
 #### Wi-Fi
 Run the following command and connect to your wi-fi network.
