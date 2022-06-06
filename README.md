@@ -1,4 +1,4 @@
-# Arch Installation Guide
+# CHAD'S GUIDE INSTALLING ARCH
 
 This guide will show step-by-step how to Install Arch Linux on UEFI mode like a Chad.
 
@@ -45,7 +45,7 @@ Ensures that the system clock is accurate.
 ### Internet Connection
 First, test if you alredy have internet connection, so run:
 ```sh
-# ping -c 2 google.com
+# ping google.com
 ```
 
 If you're not connected, follow one of these steps:
