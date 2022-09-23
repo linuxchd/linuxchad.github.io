@@ -1,4 +1,4 @@
-# Chad's Guide in Installing Arch
+# Chd's Guide in Installing Arch
 
 This guide will show step-by-step how to Install Arch Linux on UEFI mode like a Chad.
 
